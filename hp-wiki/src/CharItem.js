@@ -2,12 +2,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 function CharItem({char}) {
 
-    function sendToProfile(char){
-        console.log(char)
-    }
-
     return (
-        <ListGroup.Item action onClick={() => sendToProfile(char)}>
+        <ListGroup.Item>
             {char.name}
         </ListGroup.Item>
     )
