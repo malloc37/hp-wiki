@@ -11,6 +11,7 @@ function Profile () {
     const { char } = location.state
     var theme = getTheme(char.house)
     var image
+    
     if(char.image !== "") {
         image = char.image
     } else {
