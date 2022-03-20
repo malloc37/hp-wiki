@@ -3,6 +3,7 @@ import axios from "axios"
 import CharItem from "./CharItem"
 import ListGroup from 'react-bootstrap/ListGroup';
 import Stack from 'react-bootstrap/Stack';
+import { Link } from "react-router-dom";
 
 const apiUrl = "http://hp-api.herokuapp.com/api/characters"
 
@@ -19,13 +20,17 @@ function CharList() {
     }
 
     return (
-        <Stack gap={2} className="col-md-5 mx-auto">
-            <ListGroup>
-                {charData.map((char) => (
-                    <CharItem char={char} />
-                ))}            
-            </ListGroup>
-        </Stack>
+        <>
+            <Stack gap={2} className="col-md-5 mx-auto">
+                <ListGroup>
+                    {charData.map((char) => (
+                        <Link to="/Profile" state={{ char: char }}>
+                            <CharItem char={char} />
+                        </Link>
+                    ))}            
+                </ListGroup>
+            </Stack>
+        </>
     )
 }
 
